@@ -34,3 +34,12 @@ class ColwiseProportionTest(unittest.TestCase):
             result,
             'The sum of "A" is 0, so we cannot calculate percentages in it.'
         )
+
+    def test_overwrite_colname(self):
+        table = pd.DataFrame({'A': [1, 3], 'percent_A': ['x', 'y']})
+        result = render(table, {'colnames': 'A'})
+        expected = pd.DataFrame({
+            'A': [1, 3],
+            'percent_A': [0.25, 0.75],
+        })
+        assert_frame_equal(result, expected)
