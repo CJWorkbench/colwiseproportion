@@ -46,7 +46,9 @@ class RenderTest(unittest.TestCase):
             'percent_A': [1/3, 2/3],
             'percent_B': [0.4, 0.6],
         })
-        assert_frame_equal(result, expected)
+        assert_frame_equal(result['dataframe'], expected)
+        self.assertEqual(result['column_formats'],
+                         {'percent_A': '{:,.1%}', 'percent_B': '{:,.1%}'})
 
     def test_divide_by_0(self):
         table = pd.DataFrame({'A': [-1, 1]})
@@ -63,4 +65,5 @@ class RenderTest(unittest.TestCase):
             'A': [1, 3],
             'percent_A': [0.25, 0.75],
         })
-        assert_frame_equal(result, expected)
+        assert_frame_equal(result['dataframe'], expected)
+        self.assertEqual(result['column_formats'], {'percent_A': '{:,.1%}'})

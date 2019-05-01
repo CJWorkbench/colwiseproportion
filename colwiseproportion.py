@@ -3,6 +3,9 @@ import pandas as pd
 
 
 def render(table, params):
+    if not params['colnames']:
+        return table
+
     for column in params['colnames']:
         series = table[column]
         fractions = series / series.sum()
@@ -14,7 +17,11 @@ def render(table, params):
         # We avoid duplicate columns by overwriting if there's a conflict
         table['percent_' + column] = fractions
 
-    return table
+    return {
+        'dataframe': table,
+        'column_formats': {f'percent_{c}': '{:,.1%}'
+                           for c in params['colnames']},
+    }
 
 
 def _migrate_params_v0_to_v1(params):
