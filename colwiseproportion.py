@@ -3,9 +3,7 @@ import pandas as pd
 
 
 def render(table, params):
-    columns = [c for c in params['colnames'].split(',') if c]
-
-    for column in columns:
+    for column in params['colnames']:
         series = table[column]
         fractions = series / series.sum()
         if fractions.isin([np.inf, -np.inf]).any():
