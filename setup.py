@@ -11,5 +11,5 @@ setup(
     url='https://github.com/CJWorkbench/colwiseproportion',
     packages=[''],
     py_modules=['colwiseproportion'],
-    install_requires=['pandas==0.23.4']
+    install_requires=['pandas==0.24.2']
 )
