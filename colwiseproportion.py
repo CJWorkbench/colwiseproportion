@@ -17,3 +17,16 @@ def render(table, params):
         table['percent_' + column] = fractions
 
     return table
+
+
+def _migrate_params_v0_to_v1(params):
+    """v0: colnames is comma-separated str. v1: it's List[str]."""
+    return {
+        'colnames': [c for c in params['colnames'].split(',') if c],
+    }
+
+
+def migrate_params(params):
+    if isinstance(params['colnames'], str):
+        params = _migrate_params_v0_to_v1(params)
+    return params

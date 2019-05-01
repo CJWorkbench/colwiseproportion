@@ -10,3 +10,4 @@ parameters:
   name: ''
   column_types: [ number ]
   placeholder: Select Number Columns
+  deprecated_string_storage: false

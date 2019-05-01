@@ -1,14 +1,35 @@
 #!/usr/bin/env python3
 
-import datetime
 import unittest
-import numpy as np
 import pandas as pd
 from pandas.testing import assert_frame_equal
-from colwiseproportion import render
+from colwiseproportion import migrate_params, render
 
 
-class ColwiseProportionTest(unittest.TestCase):
+class MigrateParamsTest(unittest.TestCase):
+    def test_v0_no_colnames(self):
+        self.assertEqual(migrate_params({
+            'colnames': '',
+        }), {
+            'colnames': [],
+        })
+
+    def test_v0(self):
+        self.assertEqual(migrate_params({
+            'colnames': 'A,B',
+        }), {
+            'colnames': ['A', 'B'],
+        })
+
+    def test_v1(self):
+        self.assertEqual(migrate_params({
+            'colnames': ['A', 'B'],
+        }), {
+            'colnames': ['A', 'B'],
+        })
+
+
+class RenderTest(unittest.TestCase):
     def test_no_params(self):
         table = pd.DataFrame({'A': [1, 2], 'B': [2, 3]})
         expected = table.copy()
