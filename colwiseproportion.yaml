@@ -1,0 +1,11 @@
+id_name: colwiseproportion
+name: Percentage
+category: Analyze
+icon: number
+description: Turn columns into proportions of their totals
+help_url: modules/analyze/colwiseproportion
+parameters:
+- id_name: colnames
+  type: multicolumn
+  name: ''
+  placeholder: Select Number Columns
