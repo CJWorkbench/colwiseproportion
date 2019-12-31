@@ -2,7 +2,7 @@ id_name: colwiseproportion
 name: Percentage
 category: Analyze
 icon: number
-description: Turn columns into proportions of their totals
+description: Calculate the proportion of each values in a numeric column.
 help_url: modules/analyze/colwiseproportion
 parameters:
 - id_name: colnames
