@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from cjwmodule import i18n
 
 
 def render(table, params):
@@ -10,10 +11,12 @@ def render(table, params):
         series = table[column]
         fractions = series / series.sum()
         if fractions.isin([np.inf, -np.inf]).any():
-            return (
-                'The sum of "%s" is 0, so we cannot calculate percentages '
-                'in it.'
-            ) % column
+            return i18n.trans(
+                "badData.columnSum.isZero",
+                'The sum of "{column}" is 0, so we cannot calculate percentages '
+                'in it.',
+                {"column": column}
+            )
         # We avoid duplicate columns by overwriting if there's a conflict
         table['percent_' + column] = fractions
 
