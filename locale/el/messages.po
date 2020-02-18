@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-02-07 14:52+0000\n"
+"POT-Creation-Date: 2020-02-18 15:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: el\n"
@@ -20,13 +20,13 @@ msgstr ""
 "Generated-By: Babel 2.8.0\n"
 
 msgid "_spec.name"
-msgstr ""
+msgstr "Ποσοστό"
 
 msgid "_spec.description"
-msgstr ""
+msgstr "Υπολογισμός της αναλογίας κάθε τιμής σε μια αριθμητική στήλη."
 
 msgid "_spec.parameters.colnames.placeholder"
-msgstr ""
+msgstr "Επιλέξτε στήλες αριθμών"
 
 #: colwiseproportion.py:14
 msgid "badData.columnSum.isZero"
