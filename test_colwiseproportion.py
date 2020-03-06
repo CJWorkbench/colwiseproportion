@@ -4,6 +4,7 @@ import unittest
 import pandas as pd
 from pandas.testing import assert_frame_equal
 from colwiseproportion import migrate_params, render
+from cjwmodule.testing.i18n import i18n_message
 
 
 class MigrateParamsTest(unittest.TestCase):
@@ -55,7 +56,7 @@ class RenderTest(unittest.TestCase):
         result = render(table, {'colnames': ['A']})
         self.assertEqual(
             result,
-            'The sum of "A" is 0, so we cannot calculate percentages in it.'
+            i18n_message("badData.columnSum.isZero", {"column":"A"})
         )
 
     def test_overwrite_colname(self):

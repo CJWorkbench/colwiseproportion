@@ -1,0 +1,17 @@
+#. default-message: Percentage
+msgid "_spec.name"
+msgstr ""
+
+#. default-message: Calculate the proportion of each values in a numeric column.
+msgid "_spec.description"
+msgstr ""
+
+#. default-message: Select Number Columns
+msgid "_spec.parameters.colnames.placeholder"
+msgstr ""
+
+#. default-message: The sum of "{column}" is 0, so we cannot calculate percentages in it.
+#: colwiseproportion.py:14
+msgid "badData.columnSum.isZero"
+msgstr ""
+
